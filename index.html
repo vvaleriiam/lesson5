@@ -70,8 +70,8 @@
                 <div class="ongoing-line">
                     <p>Turpis facilisis tempor pulvinar in lobortis ornare magna.</p>
                     <div class="arrow">
-                        <button><img src="./assets/img/icons/arrow-back.png" alt=""></button>
-                        <button><img src="./assets/img/icons/arrow-forward.png" alt=""></button>
+                        <button class="arrow-back"><img src="./assets/img/icons/arrow-back.png" alt=""></button>
+                        <button class="arrow-forward"><img src="./assets/img/icons/arrow-forward.png" alt=""></button>
                     </div>
                 </div>
 
@@ -173,6 +173,7 @@
                     </form>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -231,5 +232,25 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let offset = 0;
+        const sliderLine = document.querySelector('.ongoing-slider');
+        document.querySelector('.arrow-forward').addEventListener("click", function () {
+            offset += 350;
+            if (offset > 1000) {
+                offset = 0;
+            }
+            sliderLine.style.left = -offset + "px";
+        });
+
+        document.querySelector('.arrow-back').addEventListener("click", function () {
+            offset -= 350;
+            if (offset < 0) {
+                offset = 1000;
+            }
+            sliderLine.style.left = -offset + "px";
+        });
+    </script>
 </body>
 </html>

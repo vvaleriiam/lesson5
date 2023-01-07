@@ -195,6 +195,9 @@ button{
     display: flex;
     gap: 30px;
     margin-top: 84px;
+    position: relative;
+    left: 0;
+    transition: all ease .3s;
 }
 
 .item{
